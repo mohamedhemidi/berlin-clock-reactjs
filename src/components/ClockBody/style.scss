@@ -16,11 +16,20 @@
     flex: 1;
     margin-bottom: 2rem;
 }
+
+//
+// Rows Section
+//
+
 .seconds-row {
     display: flex;
     justify-content: center ;
     margin-bottom: 1rem;
 }
+
+//
+// Clock Blocks Setion
+//
 
 .s-1-circle-orange{
     border: 2px solid #545454;
@@ -90,20 +99,3 @@
     width: $minutes_1_rectangle_width;
     background-color: $white;
 }
-/* 
-//s-1-circle-orange
-//s-1-circle-white
-
-//h-5-rectangle-orange
-//h-5-rectangle-white
-
-//h-1-rectangle-orange
-//h-1-rectangle-white
-
-// m-5-rectangle-yellow
-// m-5-rectangle-white
-// m-5-rectangle-red
-
-// m-5-rectangle-yellow
-// m-5-rectangle-white 
-*/
