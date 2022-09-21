@@ -1,0 +1,109 @@
+@import  "../../UIVariables.scss";
+
+.clock-container {
+    // border: 2px solid red;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.clock-container > div:not(:first-child) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 2rem;
+}
+.seconds-row {
+    display: flex;
+    justify-content: center ;
+    margin-bottom: 1rem;
+}
+
+.s-1-circle-orange{
+    border: 2px solid #545454;
+    height: $seconds_circle_height;
+    width: $seconds_circle_width;
+    border-radius: 50%;
+    background-color: $orange;  
+}
+.s-1-circle-white {
+    border: 2px solid #545454;
+    height: $seconds_circle_height;
+    width: $seconds_circle_width;
+    border-radius: 50%;
+    background-color: $white;  
+}
+.h-5-rectangle-orange{
+    border: 2px solid #545454;
+    height: $hours_rectangle_height;
+    width: $hours_rectangle_width;
+    background-color: $orange;  
+}
+.h-5-rectangle-white {
+    border: 2px solid #545454;
+    height: $hours_rectangle_height;
+    width: $hours_rectangle_width;
+    background-color: $white;
+}
+.h-1-rectangle-orange {
+    border: 2px solid #545454;
+    height: $hours_rectangle_height;
+    width: $hours_rectangle_width;
+    background-color: $orange;
+}
+.h-1-rectangle-white {
+    border: 2px solid #545454;
+    height: $hours_rectangle_height;
+    width: $hours_rectangle_width;
+    background-color: $white;
+}
+.m-5-rectangle-yellow {
+    border: 2px solid #545454;
+    height: $minutes_5_rectangle_height;
+    width: $minutes_5_rectangle_width;
+    background-color: $yellow;
+}
+.m-5-rectangle-white{
+    border: 2px solid #545454;
+    height: $minutes_5_rectangle_height;
+    width: $minutes_5_rectangle_width;
+    background-color: $white;
+}
+.m-5-rectangle-red {
+    border: 2px solid #545454;
+    height: $minutes_5_rectangle_height;
+    width: $minutes_5_rectangle_width;
+    background-color: $red;
+}
+.m-1-rectangle-yellow {
+    border: 2px solid #545454;
+    height: $minutes_1_rectangle_height;
+    width: $minutes_1_rectangle_width;
+    background-color: $yellow;
+}
+.m-1-rectangle-white {
+    border: 2px solid #545454;
+    height: $minutes_1_rectangle_height;
+    width: $minutes_1_rectangle_width;
+    background-color: $white;
+}
+/* 
+//s-1-circle-orange
+//s-1-circle-white
+
+//h-5-rectangle-orange
+//h-5-rectangle-white
+
+//h-1-rectangle-orange
+//h-1-rectangle-white
+
+// m-5-rectangle-yellow
+// m-5-rectangle-white
+// m-5-rectangle-red
+
+// m-5-rectangle-yellow
+// m-5-rectangle-white 
+*/
