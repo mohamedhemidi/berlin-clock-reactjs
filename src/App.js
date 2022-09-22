@@ -1,6 +1,5 @@
 import './App.css';
 import {ClockBody, Title} from './components/index.js';
-import UIVariables from './UIVariables';
 
 function App() {
   return (
