@@ -6,27 +6,29 @@ import { convertBerlinTimeToDigital, convertDigitalToBerlinTime } from '../../ut
 
 function ClockBody() {
 
-    // const [time, setTime] = useState(new Date().toLocaleTimeString('fr-FR'));
-
-    // const [code, setCode] = useState("YOOOOOOOOOOOOOOOOOOOOOOO");
-    // const [body, setBody] = useState(convertBerlinTimeToDigital(convertDigitalToBerlinTime(time)));
-
-    // useEffect(() => {
-    //     setTime(convertBerlinTimeToDigital(code))
-    //     // setBody(convertBerlinTimeToDigital(code));
-    // }, [])
-
-    // useEffect(() => {
-    //     setCode(convertDigitalToBerlinTime(time))
-    // }, [])
-
     const body = convertBerlinTimeToDigital(convertDigitalToBerlinTime(new Date().toLocaleTimeString('fr-FR')));
 
-    // console.log(new Date().toLocaleTimeString('fr-FR'))
+    const [date, setDate] = useState(new Date());
+
+    function refreshClock() {
+        setDate(new Date());
+    }
+
+    useEffect(() => {
+        const timerId = setInterval(refreshClock, 1000);
+        return function cleanup() {
+            clearInterval(timerId);
+        };
+    }, []);
+    // console.log(convertDigitalToBerlinTime("23:30:09"))
+    // const body = convertBerlinTimeToDigital(convertDigitalToBerlinTime("23:44:09"));
 
     return (
         <>
-            <h1>{new Date().toLocaleTimeString('fr-FR')}</h1>
+            <h1>{date.toLocaleTimeString('fr-FR')}</h1>
+            {/* <h1>{new Date().toLocaleTimeString('fr-FR')}</h1> */}
+            {/* <h1>23:30:09</h1> */}
+            
             <div className='clock-container'>
                 {
                     Object.entries(body).map((i, index) => {
