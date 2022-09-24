@@ -2,8 +2,7 @@ import './style.css'
 
 function Title() {
     return (
-
-        <h1>Berlin Clock</h1>
+        <h3>Berlin Clock</h3>
     );
 }
 

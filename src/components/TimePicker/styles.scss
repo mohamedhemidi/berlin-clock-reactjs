@@ -1,0 +1,17 @@
+.timepicker-container {
+    display: flex;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 4rem;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+ .timeInput {
+    width: 6rem;
+    height: 2rem;
+    margin-right: 9px;
+}
