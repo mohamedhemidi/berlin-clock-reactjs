@@ -54,7 +54,7 @@ const Converter = () => {
       <div className="content-container">
         <div className={`content ${getActiveClass(1, "active-content")}`}>
         <h2>{new Date().toLocaleTimeString('fr-FR')}</h2>
-          <ClockBody body={convertBerlinTimeToDigital(convertDigitalToBerlinTime("23:05:00"))} />
+          <ClockBody body={convertBerlinTimeToDigital(convertDigitalToBerlinTime(time))} />
         </div>
         <div className={`content ${getActiveClass(2, "active-content")}`}>
          <BerlinToDigitalConverter body={convertBerlinTimeToDigital(convertDigitalToBerlinTime("00:00:01"))} time="00:00:01"/>
