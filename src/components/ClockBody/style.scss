@@ -1,8 +1,7 @@
 @import  "../../UIVariables.scss";
 
 .clock-container {
-    // border: 2px solid red;
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -14,7 +13,7 @@
     flex-direction: row;
     justify-content: space-between;
     flex: 1;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 //
@@ -32,70 +31,74 @@
 //
 
 .s-1-circle-yellow{
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $seconds_circle_height;
     width: $seconds_circle_width;
     border-radius: 50%;
     background-color: $yellow;  
 }
 .s-1-circle-orange {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $seconds_circle_height;
     width: $seconds_circle_width;
     border-radius: 50%;
     background-color: $orange;  
 }
 .h-5-rectangle-orange{
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $hours_rectangle_height;
     width: $hours_rectangle_width;
     background-color: $orange;  
 }
 .h-5-rectangle-red {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $hours_rectangle_height;
     width: $hours_rectangle_width;
     background-color: $red;
 }
 .h-1-rectangle-orange {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $hours_rectangle_height;
     width: $hours_rectangle_width;
     background-color: $orange;
 }
 .h-1-rectangle-red {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $hours_rectangle_height;
     width: $hours_rectangle_width;
     background-color: $red;
 }
 .m-5-rectangle-yellow {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $minutes_5_rectangle_height;
     width: $minutes_5_rectangle_width;
     background-color: $yellow;
 }
 .m-5-rectangle-orange{
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $minutes_5_rectangle_height;
     width: $minutes_5_rectangle_width;
     background-color: $orange;
 }
 .m-5-rectangle-red {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $minutes_5_rectangle_height;
     width: $minutes_5_rectangle_width;
     background-color: $red;
 }
 .m-1-rectangle-yellow {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $minutes_1_rectangle_height;
     width: $minutes_1_rectangle_width;
     background-color: $yellow;
 }
 .m-1-rectangle-orange {
-    border: 2px solid #545454;
+    border: 2px solid #959595;
     height: $minutes_1_rectangle_height;
     width: $minutes_1_rectangle_width;
     background-color: $orange;
 }
+
+
+
+  
