@@ -1,13 +1,24 @@
-.converter-container{
+.converter-container {
     display: flex;
-      flex-direction: row;
-      
-      
+    flex-direction: row;
 }
+
 .clock-config {
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
     padding-top: 10rem;
 
+}
+
+@media screen and (max-width: 992px) {
+    .converter-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .clock-config {
+        margin: 0rem;
+        padding: 0rem;
+    
+    }
 }
