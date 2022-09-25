@@ -45,7 +45,6 @@ function BerlinToDigitalConverter({ body, time }) {
         setNewBody(convertBerlinTimeToDigital(convertDigitalToBerlinTime(newTime)))
     }, [seconds, fiveHours, oneHour, fiveMinutes, oneMinute, newTime])
 
-    console.log(newTime)
     return (
         <div>
             <div className='converter-container'>
