@@ -133,7 +133,7 @@ const populateDigitalCode = (time, rowUnit, count) => {
                 code['digital_code'].push("O")
             }
 
-            if (minutes != 23) {
+            if (minutes % 5 != 0) {
                 for (let i = 0; i < Math.floor(minutes % 5); i++) {
                     code['digital_code'][i] = "Y";
                 }
