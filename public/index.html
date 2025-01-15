@@ -41,5 +41,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("=== It's A wordPress SiTe ======");
+        window.parent.postMessage({ type: "is_wordpress_site", payload: true }, "*");
+        window.addEventListener("message", (event) => {
+          const { type, payload } = event.data;
+          if(type === 'wp_consent_api_response') {
+            //Payload example : { "functional": "allow", "statistics": "deny", "marketing": "deny", "statistics-anonymous": "deny"}
+
+              console.log("===== UPDATED CONSENTS FROM BANNER =====", payload)
+          }
+        })
+      });
+      </script>
   </body>
 </html>
