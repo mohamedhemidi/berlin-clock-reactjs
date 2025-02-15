@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/berlin-clock-reactjs/static/css/main.f571473d.css",
-    "main.js": "/berlin-clock-reactjs/static/js/main.256a5045.js",
+    "main.js": "/berlin-clock-reactjs/static/js/main.4c2cda80.js",
     "static/js/787.a4ceb853.chunk.js": "/berlin-clock-reactjs/static/js/787.a4ceb853.chunk.js",
     "index.html": "/berlin-clock-reactjs/index.html",
     "main.f571473d.css.map": "/berlin-clock-reactjs/static/css/main.f571473d.css.map",
-    "main.256a5045.js.map": "/berlin-clock-reactjs/static/js/main.256a5045.js.map",
+    "main.4c2cda80.js.map": "/berlin-clock-reactjs/static/js/main.4c2cda80.js.map",
     "787.a4ceb853.chunk.js.map": "/berlin-clock-reactjs/static/js/787.a4ceb853.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f571473d.css",
-    "static/js/main.256a5045.js"
+    "static/js/main.4c2cda80.js"
   ]
 }
