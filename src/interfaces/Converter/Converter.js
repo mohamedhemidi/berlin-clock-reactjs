@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   BerlinToDigitalConverter,
   ClockBody,
@@ -12,6 +12,7 @@ import "./style.scss";
 
 const Converter = () => {
   const [ToggleState, setToggleState] = useState(1);
+  const iframeRef = useRef(null);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -30,6 +31,35 @@ const Converter = () => {
     return function cleanup() {
       clearInterval(timerId);
     };
+  }, []);
+  useEffect(() => {
+    if (iframeRef.current) {
+      const iframe = iframeRef.current;
+
+      iframe.onload = () => {
+        const initialLanguage =
+          iframe.getAttribute("data-sp-embed-policy-initial-language") || "en";
+        const iframeWindow = iframe.contentWindow;
+
+        if (iframeWindow) {
+          // Create a script element
+          const scriptElement = document.createElement("script");
+          scriptElement.src =
+            "https://test-v2.secureprivacy.ai/sp-embed-policy.js";
+
+          // Set up spEmbedData
+          iframeWindow.spEmbedData = {
+            AdminId: "1342",
+            InitialLanguage: initialLanguage,
+            Url: window.location.href,
+            PolicyIds: ["663d3a31547f6102b1545833"],
+          };
+
+          // Append the script to the iframe's head
+          iframeWindow.document.head.appendChild(scriptElement);
+        }
+      };
+    }
   }, []);
 
   const getActiveClass = (index, className) =>
@@ -61,6 +91,12 @@ const Converter = () => {
         >
           Learn
         </li>
+        <li
+          className={`tabs ${getActiveClass(5, "active-tabs")}`}
+          onClick={() => toggleTab(5)}
+        >
+          Privacy Policy
+        </li>
       </ul>
       <div className="content-container">
         <div className={`content ${getActiveClass(1, "active-content")}`}>
@@ -72,7 +108,7 @@ const Converter = () => {
         <div className={`content ${getActiveClass(2, "active-content")}`}>
           <BerlinToDigitalConverter
             body={convertBerlinTimeToDigital(
-              convertDigitalToBerlinTime("00:00:01")
+              convertDigitalToBerlinTime("00:00:01"),
             )}
             time="00:00:01"
           />
@@ -90,6 +126,22 @@ const Converter = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
+          ></iframe>
+        </div>
+        <div
+          className={`content ${getActiveClass(5, "active-content-policy")}`}
+        >
+          <iframe
+            allowfullscreen
+            title="cookie_policy"
+            ref={iframeRef}
+            height="800"
+            width="100%"
+            style={{
+              border: "1px solid #d0daeb",
+              borderRadius: "12px",
+            }}
+            data-embed-policy-initial-language="en"
           ></iframe>
         </div>
       </div>

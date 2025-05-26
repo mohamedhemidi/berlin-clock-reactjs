@@ -1,10 +1,17 @@
+// Variables for consistent theming
+$primary-color: #5893f1;
+$background-color: #eeeded;
+$border-color: rgba(0, 0, 0, 0.3);
+$tab-background: #80808013;
+
 .container {
   width: 100%;
   height: 100%;
-  background-color: #eeeded;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  // display: flex;
-  // flex-direction: column;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tab-list {
@@ -14,6 +21,7 @@
   font-size: 18px;
   padding: 0;
   margin: 0;
+  border-bottom: 1px solid $border-color;
 }
 
 .tabs {
@@ -21,53 +29,98 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #80808013;
+  background: $tab-background;
   position: relative;
   cursor: pointer;
-}
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: darken($background-color, 5%);
+  }
 
-.tabs:not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  &:not(:last-child) {
+    border-right: 1px solid $border-color;
+  }
 }
 
 .active-tabs {
-  background: #eeeded;
-}
+  background: $background-color;
+  font-weight: 500;
 
-.active-tabs::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% + 2px);
-  height: 4px;
-  background: #5893f1;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 4px;
+    background: $primary-color;
+    transition: width 0.3s ease;
+  }
 }
 
 .content {
-  background-color: #eeeded;
+  background-color: $background-color;
   display: none;
-  padding: 10px;
+  padding: 20px;
+  min-height: 200px;
 }
 
 .active-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding: 2rem 20%;
+  animation: fadeIn 0.3s ease-in;
 }
 
+.active-content-policy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+// Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive design
 @media screen and (max-width: 992px) {
   .active-content {
-    padding: 0;
+    padding: 1rem;
   }
+  
   .tabs {
     font-size: 1rem;
+    
+    &:not(:first-child) {
+      font-size: 0.8rem;
+    }
   }
-  .tabs:not(:first-child) {
-    font-size: 0.6rem;
+}
+
+@media screen and (max-width: 576px) {
+  .tab-list {
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .tabs {
+    font-size: 0.9rem;
+    
+    &:not(:first-child) {
+      font-size: 0.7rem;
+    }
   }
 }
